@@ -18,7 +18,7 @@
   --primary: #f9fafb;
   --secondary: #9ca3af;
   --accent-primary: #60a5fa;
-  --accent-secondary: #34d399;
+  --accent-secondary: #60a5fa;
   --main-font: "Roboto", sans-serif;
   --details-font: "Poppins", sans-serif;
 }
@@ -92,7 +92,7 @@
   content: "";
   width: 80%;
   height: 100%;
-  background-color: #34d399;
+  background-color: #60a5fa;
   position: absolute;
   top: 0;
   left: -20%;
@@ -130,7 +130,7 @@
   background: linear-gradient(to bottom, rgba(169, 169, 169, 0.5), transparent);
   pointer-events: none;
 }
-#header svg {
+#header .svg_image {
   max-width: 1.5rem;
   fill: var(--primary);
 }
@@ -326,7 +326,7 @@ span.admin_name {
   flex-direction: column;
   row-gap: 20px;
   grid-column: 9 / -1;
-  grid-row: 7/12;
+  grid-row: 6/12;
 }
 .profile img {
   width: 35px;
@@ -352,4 +352,46 @@ span.admin_name {
   row-gap: 20px;
   padding: 20px;
   box-shadow: 10px 10px 10px -10px #c4c4c4;
+}
+#theme_toggler {
+  cursor: pointer;
+}
+body[data-theme="dark"] #sidebar {
+  background-color: var(--base);
+  color: var(--primary);
+}
+body[data-theme="dark"] #sidebar svg {
+  fill: var(--primary);
+}
+body[data-theme="dark"] #header {
+  background-color: var(--base-secondary);
+}
+body[data-theme="dark"] #content_container {
+  background-color: var(--separator);
+  color: var(--primary);
+}
+body[data-theme="dark"] #search_bar {
+  background-color: var(--primary);
+}
+body[data-theme="dark"] .admin_action_btns button {
+  background-color: var(--accent-primary);
+  color: var(--primary);
+}
+body[data-theme="dark"] .admin_action_btns button:hover {
+  background-color: var(--separator);
+  color: var(--primary);
+}
+body[data-theme="dark"] #header::after {
+  all: unset;
+}
+body[data-theme="dark"] .announcements_container,
+body[data-theme="dark"] .trending_profiles,
+body[data-theme="dark"] .project {
+  box-shadow: unset;
+}
+
+@media (max-width: 1640px) {
+  .trending {
+    grid-row: 7/12;
+  }
 }
